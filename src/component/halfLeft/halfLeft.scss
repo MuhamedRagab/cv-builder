@@ -1,0 +1,8 @@
+.half-left {
+  @apply min-h-screen bg-gray-200 w-full text-center p-6 flex flex-col justify-center items-center gap-12;
+
+  .person-image {
+    @apply rounded-full w-2/3 mx-auto object-cover;
+    aspect-ratio: 1;
+  }
+}

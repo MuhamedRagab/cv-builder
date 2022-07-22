@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+section,
+article {
+  width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  width: 80%;
+  margin-inline: auto;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #000;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+p,
+span,
+small {
+  color: #666;
+}
+
+@media print {
+  * {
+    margin: 0;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 11pt;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  p,
+  span,
+  small {
+    color: #000;
+  }
+
+  .container {
+    @apply max-h-screen w-full grid-cols-3 overflow-hidden;
+  }
+  .container > * {
+    @apply m-0 gap-2;
+  }
+  .btn {
+    @apply hidden;
+  }
+  .gap-4,
+  .gap-6 {
+    @apply gap-2 !important;
+  }
 }
